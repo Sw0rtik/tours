@@ -1,0 +1,2 @@
+module HolidayHousesHelper
+end

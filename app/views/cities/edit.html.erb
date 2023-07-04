@@ -1,0 +1,15 @@
+<h1>Редактирование Города</h1>
+<%= form_for :city, url: city_path(@city), method: :patch do |f| %>
+  <% if @city.errors.any? %>
+    <% @city.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    Название города<br>
+    <%= f.text_field :name, { :class => 'form-control' } %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+<% end %>

@@ -1,0 +1,17 @@
+<h2>Добавить город</h2>
+<%= form_for([@city]) do |f| %>
+  <% if @city.errors.any? %>
+    <% @city.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>Регион<br>
+    <%= f.select :region_id, @regions_options, required: true %><br>
+    Название <br>
+    <%= f.text_field :name, { :class => 'form-control' } %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+
+<% end %>

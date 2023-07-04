@@ -1,0 +1,7 @@
+<h1>Регионы <%= link_to "+", new_region_path, :class => 'btn btn-outline-primary' %></h1>
+
+<% @region.each do |region| %>
+  <div class="alert alert-light">
+    <h3><%= link_to region.name, region_path(region), :class => 'form-control' %></h3>
+  </div>
+<% end %>

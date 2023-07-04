@@ -1,0 +1,15 @@
+<h1>Редактирование Региона</h1>
+<%= form_for :region, url: region_path(@region), method: :patch do |f| %>
+  <% if @region.errors.any? %>
+    <% @region.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    Название страны<br>
+    <%= f.text_field :name, { :class => 'form-control' } %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+<% end %>

@@ -1,0 +1,5 @@
+<h1><%= @hhs.name %></h1>
+<hr>
+<%= link_to "Редактировать", edit_holiday_house_path(@hhs), :class => 'btn btn-warning' %>
+<%= link_to "Удалить", holiday_house_path(@hhs), method: :delete, data: { confirm: "Хотите удалить город?" }, :class => 'btn btn-danger' %>
+

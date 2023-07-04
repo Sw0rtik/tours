@@ -1,0 +1,17 @@
+<h2>Добавить турбазу</h2>
+<%= form_for([@hhs]) do |f| %>
+  <% if @hhs.errors.any? %>
+    <% @hhs.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>Город<br>
+    <%= f.select :city_id, @cities_options, required: true %><br>
+    Название <br>
+    <%= f.text_field :name, { :class => 'form-control' } %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+
+<% end %>

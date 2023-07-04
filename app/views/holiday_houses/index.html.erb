@@ -1,0 +1,7 @@
+<h1>Турбазы <%= link_to "+", new_holiday_house_path, :class => 'btn btn-outline-primary' %></h1>
+
+<% @hhs.each do |hh| %>
+  <div class="alert alert-light">
+    <h3><%= link_to hh.name, holiday_house_path(hh), :class => 'form-control' %></h3>
+  </div>
+<% end %>

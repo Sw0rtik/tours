@@ -1,0 +1,15 @@
+<h1>Редактирование Турбазы</h1>
+<%= form_for :holiday_house, url: holiday_house_path(@hhs), method: :patch do |f| %>
+  <% if @hhs.errors.any? %>
+    <% @hhs.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    Название турбазы<br>
+    <%= f.text_field :name, { :class => 'form-control' } %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+<% end %>

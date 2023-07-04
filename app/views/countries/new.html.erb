@@ -1,0 +1,15 @@
+<h1>Добавление страны</h1>
+<%= form_for @country do |f| %>
+  <% if @country.errors.any? %>
+    <% @country.errors.full_messages.each do |msg| %>
+      <div class="alert alert-danger"><%= msg %></div>
+    <% end %>
+  <% end %>
+  <p>
+    Название страны<br>
+    <%= f.text_field :name, { :class => 'form-control' } %>
+  </p>
+  <p>
+    <%= f.submit({ :class => 'btn btn-success' }) %>
+  </p>
+<% end %>

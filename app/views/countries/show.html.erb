@@ -1,0 +1,25 @@
+<h1><%= @country.name %></h1>
+<hr>
+<%= link_to "Редактировать", edit_country_path(@country), :class => 'btn btn-warning' %>
+<%= link_to "Удалить", country_path(@country), method: :delete, data: { confirm: "Хотите удалить страну?" }, :class => 'btn btn-danger' %>
+<hr>
+<div class="dropdown">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Регионы
+	</button>
+	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<% @region.each do |region| %>
+			<span class="dropdown-item"><%= link_to region.name, region_path(region) %></span>
+		<% end %>
+	</div><%= link_to "+", new_region_path, :class => 'btn btn-outline-primary btn-sm' %>
+</div>
+<h1>Турбазы</h1>
+<% @region.each do |region| %>
+	<% region.cities.each do |city| %>
+		<% city.holiday_houses.each do |hh| %>
+			<div class="alert alert-light">
+				<h3><%= link_to hh.name, holiday_house_path(hh), :class => 'form-control' %></h3>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>
